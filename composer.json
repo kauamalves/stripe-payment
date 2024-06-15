@@ -1,0 +1,17 @@
+{
+    "name": "pc/stripe",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kauamalves",
+            "email": "kaua.devv@gmail.com"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "^14.10"
+    }
+}
