@@ -39,29 +39,31 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Page - Gosth</title>
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <a href="Mycart.php">Go to my cart</a>
+    <div class="header">
+        <a href="Mycart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
 
-    <ul>
-        <?php foreach ($products as $product) : ?>
-            <li>
-                <?php echo ucfirst($product['name']) ?> |
-                <a href="?id=<?php echo $product['id'] ?>">Add</a> |
-                <?php echo 'Preço: R$' . number_format($product['price'], 2, ',', '.')?>
-            </li>
-        <?php endforeach ?>
-    </ul>
+    <hr>
 
-    <!--  <ul>
-        <li>Geladeira <a href="?id=1">Add</a> R$1.200</li>
-        <li>Teclado <a href="?id=2">Add</a> R$350</li>
-        <li>Mouse <a href="?id=3">Add</a> R$100</li>
-        <li>Monitor <a href="?id=4">Add</a> R$500</li>
-    </ul>
--->
+    <main>
+        <ul>
+            <?php foreach ($products as $product) : ?>
+                <li>
+                    <?php echo ucfirst($product['name']) ?> |
+                    <a href="?id=<?php echo $product['id'] ?>">Add</a> |
+                    <?php echo 'Preço: R$' . number_format($product['price'], 2, ',', '.') ?>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </main>
+
+
 </body>
 
 </html>
