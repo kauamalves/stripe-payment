@@ -12,6 +12,7 @@
         }
     ],
     "require": {
-        "stripe/stripe-php": "^14.10"
+        "stripe/stripe-php": "^14.10",
+        "spatie/ignition": "^1.15"
     }
 }

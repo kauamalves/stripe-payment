@@ -2,10 +2,13 @@
 
 require '../vendor/autoload.php';
 
+use Spatie\Ignition\Ignition;
 use app\library\Cart;
 use Stripe\StripeClient;
 
 session_start();
+
+Ignition::make()->register();
 
 $private_key = '';
 $stripe = new StripeClient($private_key);

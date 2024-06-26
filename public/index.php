@@ -1,11 +1,15 @@
 <?php
 
+use Spatie\Ignition\Ignition;
+
 use app\library\Cart;
 use app\library\Product;
 
 require '../vendor/autoload.php';
 
 session_start();
+Ignition::make()->register();
+
 
 if (!isset($_SESSION['cart']['total'])) {
     $_SESSION['cart']['total'] = 0;
@@ -30,7 +34,6 @@ if (isset($_GET['id'])) {
     $cart = new Cart;
     $cart->add($product);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +42,7 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page - Gosth</title>
+    <title>Home Page</title>
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -52,18 +55,16 @@ if (isset($_GET['id'])) {
     <hr>
 
     <main>
-        <ul>
+        <div class="products">
             <?php foreach ($products as $product) : ?>
-                <li>
-                    <?php echo ucfirst($product['name']) ?> |
-                    <a href="?id=<?php echo $product['id'] ?>">Add</a> |
-                    <?php echo 'Preço: R$' . number_format($product['price'], 2, ',', '.') ?>
-                </li>
+                <div class="product">
+                    <p class="productName"><?php echo ucfirst($product['name']) ?></p>
+                    <p class="productPrice"><?php echo 'Preço: R$' . number_format($product['price'], 2, ',', '.') ?></p>
+                    <a href="?id=<?php echo $product['id'] ?>">Adicionar ao carrinho</a>
+                </div>
             <?php endforeach ?>
-        </ul>
+        </div>
     </main>
-
-
 </body>
 
 </html>
