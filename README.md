@@ -5,3 +5,5 @@
 - API Integration
 - OOP (Object Oriented Programming)
 - Integration with Front End & Back End 
+- Dark mode option on home page
+- Laravel error page
