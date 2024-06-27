@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
+    --Main-Purple: color: #551A8B;
     --Red-Hover: color: rgb(109, 0, 0);
 }
 
@@ -16,12 +17,17 @@ html {
     font-weight: 400;
 }
 
+main {
+    margin: 2rem 0 0 3rem;
+}
+
 ul {
     list-style: none;
 }
 
 i {
-    font-size: 20px;
+    font-size: 23px;
+    color: #551A8B;
 }
 
 a {
@@ -29,14 +35,27 @@ a {
     transition: 0.3s;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 a:hover {
     letter-spacing: 0.8px;
+}
+
+.icons i{
+    padding: 0 10px 0 20px; 
 }
 
 .header, .headerMyCart {
     display: flex;
     justify-content: end;
-    margin: 1.5rem;
+    margin: 1.5rem 1.5rem 1rem 3rem;
+}
+
+.header button{
+    border: none;
+    background-color: transparent;
 }
 
 .headerMyCart {
@@ -54,15 +73,11 @@ a:hover {
     border-radius: 5px;
 }
 
-main {
-    margin: 2rem 0 0 2rem;
-}
-
 .products {
     display: flex;
     flex-wrap: wrap; /* Permite que os itens sejam quebrados em linhas quando necessário */
     justify-content: center;
-    gap: 1rem; /* Adiciona espaço entre os itens */
+    gap: 2rem; /* Adiciona espaço entre os itens */
 }
 
 .product {
@@ -72,7 +87,7 @@ main {
     padding: 2rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 200px;
+    width: 225px;
     text-align: center;
 }
 
@@ -92,7 +107,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem; /* Espaço entre os itens do carrinho */
-    padding: 1rem;
+    
 }
 
 .productInCart {
